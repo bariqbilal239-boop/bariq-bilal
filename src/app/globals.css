@@ -296,12 +296,49 @@ dd {
   padding: 20px 64px;
 }
 
-.nav__logo {
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__mark {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 12px rgba(255, 107, 0, 0.45));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.logo:hover .logo__mark {
+  transform: rotate(-6deg) scale(1.08);
+  filter: drop-shadow(0 0 18px rgba(255, 107, 0, 0.7));
+}
+
+.logo__spark {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: spark-twinkle 2.4s ease-in-out infinite;
+}
+
+@keyframes spark-twinkle {
+  50% {
+    transform: rotate(90deg) scale(0.7);
+    opacity: 0.75;
+  }
+}
+
+.logo__text {
   font-family: var(--font-syne), sans-serif;
   font-weight: 700;
   font-size: 20px;
   letter-spacing: -0.5px;
   color: var(--cream);
+  white-space: nowrap;
+}
+
+.logo__text .text-gradient {
+  filter: none;
 }
 
 .nav__links {

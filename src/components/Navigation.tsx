@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { navLinks } from "@/data/content";
+import Logo from "./Logo";
 
 function TalkButton() {
   return (
@@ -39,9 +40,7 @@ export default function Navigation() {
   return (
     <header className="nav container">
       <div className="nav__bar">
-        <Link href="/" className="nav__logo">
-          Portfolio
-        </Link>
+        <Logo />
 
         <nav aria-label="Main">
           <ul className="nav__links list-reset">
