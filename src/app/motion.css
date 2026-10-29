@@ -182,22 +182,37 @@
 /* ---------- Scroll reveal (classes added by MotionEffects) ---------- */
 
 /* .card.reveal outranks the card transition below so cards fade in too. */
+/* Rise up, grow slightly and sharpen out of a soft blur. */
 .reveal,
 .card.reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(32px) scale(0.96);
+  filter: blur(6px);
   transition:
-    opacity 0.45s ease,
-    transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.5s ease,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease,
     --spot 0.3s ease;
-  transition-delay: calc(var(--stagger, 0) * 50ms);
+  transition-delay: calc(var(--stagger, 0) * 60ms);
+}
+
+/* The timeline itself stays visible; only its line draws in and the steps pop. */
+.process.reveal {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.process__step.reveal {
+  transform: translateY(16px) scale(0.6);
 }
 
 .reveal.in-view {
   opacity: 1;
   transform: none;
+  filter: none;
 }
 
 .project-card.reveal.in-view:hover,
@@ -315,7 +330,7 @@ a.icon-box:hover img {
   transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.1s;
 }
 
-.reveal:not(.in-view) .process::before {
+.process.reveal:not(.in-view)::before {
   transform: scaleX(0);
 }
 
@@ -358,6 +373,7 @@ a.icon-box:hover img {
   .reveal {
     opacity: 1;
     transform: none;
+    filter: none;
   }
 }
 

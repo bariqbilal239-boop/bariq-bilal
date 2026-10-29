@@ -2210,30 +2210,34 @@ a.icon-box:hover {
     grid-template-columns: 1fr;
   }
 
-  .process {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 280px;
-  }
-
+  /* Stays a horizontal timeline on phones, just smaller. */
   .process::before {
-    top: 0;
-    bottom: 0;
-    left: 28px;
-    right: auto;
-    width: 1px;
-    height: auto;
-    background: linear-gradient(180deg, var(--violet), var(--lime));
+    top: 21px;
+    left: 10%;
+    right: 10%;
   }
 
   .process::after {
-    top: -14px;
-    left: 21px;
+    top: 16px;
+    left: 0;
+    width: 11px;
+    height: 11px;
   }
 
   .process__step {
-    flex-direction: row;
-    gap: 20px;
+    gap: 10px;
+  }
+
+  .process__circle {
+    width: 42px;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .process__label {
+    font-size: 11px;
+    line-height: 16px;
+    text-align: center;
   }
 
   .slider__track {

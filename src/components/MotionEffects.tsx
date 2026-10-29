@@ -4,9 +4,15 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 // Elements that fade up as they scroll into view. Cards inside a grid get a staggered delay.
+// Each block animates once (no nested fades), so content appears without waiting on its parent.
 const REVEAL_SELECTOR = [
-  ".main > section",
-  ".main > .stats-strip",
+  ".section-header",
+  ".section-title--lg",
+  ".experience-head",
+  ".story__head",
+  ".featured",
+  ".cta-banner",
+  ".process",
   ".card",
   ".process__step",
   ".big-stat",
@@ -73,7 +79,8 @@ export default function MotionEffects() {
           observer.unobserve(el);
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" },
+      // Start a little before the element enters the screen so it is already moving when seen.
+      { threshold: 0, rootMargin: "0px 0px 12% 0px" },
     );
     targets.forEach((el) => observer.observe(el));
 
