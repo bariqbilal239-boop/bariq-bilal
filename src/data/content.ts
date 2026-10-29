@@ -21,11 +21,8 @@ export const contactInfo = {
 export const socialLinks = {
   github: "https://github.com/bariq49",
   whatsapp: contactInfo.whatsappHref,
-  linkedin: "#",
-  dribbble: "#",
 };
 
-export const resumeUrl = "/resume.pdf";
 
 export const heroStats = [
   { value: "10", suffix: "+", label: "Experience" },
@@ -94,29 +91,86 @@ export const projects: Project[] = [
 
 export const processSteps = ["Identify", "Design", "Build", "Implement", "Enable"];
 
-// Real client feedback from Bariq's Upwork profile. Add new reviews here as they come in.
+// Real client reviews (Upwork and freelance marketplace). Add new ones here; the slider adapts.
+// Dates are approximate months, worked out from when each review was posted.
 export type Review = {
   name: string;
-  initials: string;
-  project: string;
+  location: string;
   date: string;
   rating: number;
-  source: string;
   quote: string[];
+  project?: string;
+  source?: string;
+  tag?: string;
 };
 
 export const reviews: Review[] = [
   {
-    name: "Lovejeet S.",
-    initials: "LS",
-    project: "Client Dashboard & Ride Management System (Next.js)",
-    date: "March 2026",
+    name: "abdeljalilkayou",
+    location: "Belgium",
+    date: "Feb 2026",
     rating: 5,
+    project: "airport-transfers.be",
+    quote: [
+      "Bilal did an outstanding job developing the airport-transfers.be platform entirely with custom code. His professionalism and attention to detail were evident throughout the project. He demonstrated a deep understanding of our business needs and translated them into a highly functional and efficient website.",
+      "The result is a powerful, tailor-made platform with a fully customized back-office fleet management system that perfectly fits our operations. Communication was smooth, deadlines were respected, and the final product exceeded expectations. I highly recommend Bilal for any custom web development project.",
+    ],
+  },
+  {
+    name: "worisca",
+    location: "United States",
+    date: "Feb 2026",
+    rating: 5,
+    project: "BookOnyx.com",
+    quote: [
+      "Great experience working with Bariq on BookOnyx.com. He understood the premium look and feel we needed for our luxury chauffeur service and delivered a polished, professional site. Communication was easy, turnaround was solid, and they were receptive to feedback throughout the process. Would definitely work with them again and recommend to others.",
+    ],
+  },
+  {
+    name: "Lovejeet S.",
+    location: "Upwork client",
+    date: "Mar 2026",
+    rating: 5,
+    project: "Client Dashboard & Ride Management System",
     source: "Upwork",
     quote: [
       "Great experience working with Bariq Bilal on the DSL website project. He developed a complete admin panel and successfully integrated the customer Sign Up and Login system. Everything works smoothly, and the admin dashboard makes it easy to manage customers.",
       "Professional work, clear communication, and delivered exactly as required. Highly recommended!",
     ],
+  },
+  {
+    name: "snatanael",
+    location: "Switzerland",
+    date: "Nov 2025",
+    rating: 5,
+    tag: "Ongoing collaboration",
+    quote: [
+      "Outstanding Freelancer — Highly Recommended. I had an excellent experience working with this freelancer. Their professionalism was evident from the very beginning: clear communication, punctual delivery, and a strong commitment to quality. The code expertise they demonstrated went far beyond expectations. Every solution was clean, efficient, and well-structured, showing a deep understanding of both the project requirements and best development practices.",
+      "Their language fluency made the collaboration smooth and effortless. They communicated complex technical concepts in a clear and accessible way, which greatly improved the workflow. Overall, their deep understanding of the tasks allowed them to anticipate needs, propose improvements, and deliver a final result that exceeded what I originally envisioned. I highly recommend this freelancer to anyone looking for reliable, skilled, and truly professional support.",
+    ],
+  },
+  {
+    name: "usman_feroz93",
+    location: "United Kingdom",
+    date: "Jun 2026",
+    rating: 5,
+    quote: [
+      "I'm honestly blown away by the results! Bariq Bilal built an outstanding business website with a stunning design and flawless functionality. He was highly responsive, easy to communicate with, and delivered exceptional work quickly. A true professional. I would highly recommend him to anyone looking for a skilled and reliable web developer.",
+    ],
+  },
+  {
+    name: "zeekedesign",
+    location: "Serbia",
+    date: "Sep 2026",
+    rating: 5,
+    quote: ["Perfect guy for collaboration!"],
+  },
+  {
+    name: "jacoblacour_222",
+    location: "United States",
+    date: "May 2026",
+    rating: 5,
+    quote: ["Great developer! Highly recommend."],
   },
 ];
 

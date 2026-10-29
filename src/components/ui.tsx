@@ -39,6 +39,18 @@ export function Chips({ items, large = false }: { items: string[]; large?: boole
   );
 }
 
+export function Stars({ rating }: { rating: number }) {
+  return (
+    <span className="stars" role="img" aria-label={`${rating} out of 5 stars`}>
+      {Array.from({ length: 5 }, (_, index) => (
+        <svg key={index} viewBox="0 0 24 24" className={index < rating ? "star star--on" : "star"} aria-hidden>
+          <path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" />
+        </svg>
+      ))}
+    </span>
+  );
+}
+
 type Stat = { value: string; suffix: string; label: string };
 
 export function StatList({ stats, className }: { stats: Stat[]; className: string }) {

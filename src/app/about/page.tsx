@@ -9,7 +9,6 @@ import {
   contactInfo,
   currently,
   experience,
-  resumeUrl,
   services,
   skillGroups,
   socialLinks,
@@ -19,12 +18,6 @@ import {
 export const metadata: Metadata = {
   title: "About",
 };
-
-const profileLinks = [
-  { icon: "/icons/card-github.svg", label: "GitHub", href: socialLinks.github },
-  { icon: "/icons/card-linkedin.svg", label: "LinkedIn", href: socialLinks.linkedin },
-  { icon: "/icons/card-dribbble.svg", label: "Dribbble", href: socialLinks.dribbble },
-];
 
 function ProfileCard() {
   return (
@@ -45,14 +38,16 @@ function ProfileCard() {
         <p className="profile-card__role">
           Full-Stack Developer &amp; UI/UX Designer · Based in {contactInfo.location}
         </p>
-        <div className="profile-card__links">
-          {profileLinks.map((link) => (
-            <a key={link.label} href={link.href} className="profile-card__link" target="_blank" rel="noopener noreferrer">
-              <img src={link.icon} alt="" />
-              {link.label}
-            </a>
-          ))}
-        </div>
+        <a href={socialLinks.github} className="profile-card__github" target="_blank" rel="noopener noreferrer">
+          <span className="icon-box">
+            <img src="/icons/github.svg" alt="" />
+          </span>
+          <span className="profile-card__github-text">
+            <span className="profile-card__github-label">GitHub</span>
+            <span className="profile-card__github-handle">{socialLinks.github.replace("https://", "")}</span>
+          </span>
+          <img src="/icons/arrow-right-small.svg" alt="" className="profile-card__github-arrow" />
+        </a>
       </div>
     </div>
   );
@@ -129,10 +124,6 @@ function Experience() {
           A track record of shipping real products across agencies, startups, and on my own. Every role taught me
           something new about building for real users.
         </p>
-        <a href={resumeUrl} className="btn btn--primary experience-head__cta" download>
-          Full Resume
-          <img src="/icons/resume-download.svg" alt="" className="btn__icon btn__icon--sm" />
-        </a>
       </div>
       <div className="experience-grid">
         {experience.map((job) => (

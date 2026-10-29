@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { processSteps, reviews, upworkProfile, type Project, type Review } from "@/data/content";
-import { ArrowButton, Chips, SectionHeader } from "./ui";
+import { processSteps, reviews, upworkProfile, type Project } from "@/data/content";
+import ReviewSlider from "./ReviewSlider";
+import { ArrowButton, Chips, SectionHeader, Stars } from "./ui";
 
 function ProjectCard({ project }: { project: Project }) {
   return (
@@ -52,53 +53,6 @@ export function ProcessSection() {
   );
 }
 
-function Stars({ rating }: { rating: number }) {
-  return (
-    <span className="stars" role="img" aria-label={`${rating} out of 5 stars`}>
-      {Array.from({ length: 5 }, (_, index) => (
-        <svg key={index} viewBox="0 0 24 24" className={index < rating ? "star star--on" : "star"} aria-hidden>
-          <path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6-4.9-4.6 6.6-.8z" />
-        </svg>
-      ))}
-    </span>
-  );
-}
-
-function ReviewCard({ review }: { review: Review }) {
-  return (
-    <figure className="card review">
-      <span className="review__mark" aria-hidden>
-        &ldquo;
-      </span>
-      <div className="review__top">
-        <Stars rating={review.rating} />
-        <span className="review__badge">
-          <svg viewBox="0 0 24 24" aria-hidden>
-            <path d="M20 6 9 17l-5-5" />
-          </svg>
-          Verified {review.source} review
-        </span>
-      </div>
-      <blockquote className="review__quote">
-        {review.quote.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
-      </blockquote>
-      <figcaption className="review__author">
-        <span className="review__avatar" aria-hidden>
-          {review.initials}
-        </span>
-        <span>
-          <span className="review__name">{review.name}</span>
-          <span className="review__meta">
-            {review.project} · {review.date}
-          </span>
-        </span>
-      </figcaption>
-    </figure>
-  );
-}
-
 export function TestimonialsSection() {
   return (
     <section className="section">
@@ -107,28 +61,28 @@ export function TestimonialsSection() {
         title="What clients say"
         lead="Real feedback from clients I've built products for."
       />
-      <div className="reviews">
-        {reviews.map((review) => (
-          <ReviewCard key={review.name + review.date} review={review} />
-        ))}
-        <aside className="card rating-card">
-          <p className="rating-card__score">
+      <div className="card rating-bar">
+        <div className="rating-bar__score">
+          <span className="rating-bar__number">
             {upworkProfile.rating}
             <span className="accent-2">★</span>
-          </p>
-          <Stars rating={5} />
-          <p className="rating-card__label">Average client rating on Upwork</p>
-          <ul className="rating-card__list list-reset">
-            {upworkProfile.highlights.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <a href={upworkProfile.url} target="_blank" rel="noopener noreferrer" className="btn btn--secondary">
-            View my Upwork profile
-            <img src="/icons/arrow-right-small.svg" alt="" className="btn__icon btn__icon--sm" />
-          </a>
-        </aside>
+          </span>
+          <span>
+            <Stars rating={5} />
+            <span className="rating-bar__label">Average from {reviews.length} client reviews</span>
+          </span>
+        </div>
+        <ul className="rating-bar__list list-reset">
+          {upworkProfile.highlights.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <a href={upworkProfile.url} target="_blank" rel="noopener noreferrer" className="btn btn--secondary">
+          View my Upwork profile
+          <img src="/icons/arrow-right-small.svg" alt="" className="btn__icon btn__icon--sm" />
+        </a>
       </div>
+      <ReviewSlider reviews={reviews} />
     </section>
   );
 }

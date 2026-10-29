@@ -25,4 +25,4 @@ password is never uploaded. On your hosting provider, add the same values as env
 ## Editing content
 
 All text, projects, testimonials, contact details and social links live in `src/data/content.ts`.
-Images are in `public/images`, icons in `public/icons`. Put your CV at `public/resume.pdf` for the Resume buttons.
+Images are in `public/images`, icons in `public/icons`.
