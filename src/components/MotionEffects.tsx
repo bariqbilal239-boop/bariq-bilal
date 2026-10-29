@@ -17,7 +17,7 @@ function countUp(el: HTMLElement) {
   const target = Number(el.dataset.count);
   if (!Number.isFinite(target)) return;
   const start = performance.now();
-  const duration = 1400;
+  const duration = 900;
   const tick = (now: number) => {
     const progress = Math.min((now - start) / duration, 1);
     const eased = 1 - Math.pow(1 - progress, 3);

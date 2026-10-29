@@ -25,9 +25,9 @@ export const socialLinks = {
 
 
 export const heroStats = [
-  { value: "10", suffix: "+", label: "Experience" },
-  { value: "50", suffix: "+", label: "Projects Delivered" },
-  { value: "15", suffix: "+", label: "Happy Clients" },
+  { value: "8", suffix: "+", label: "Years Experience" },
+  { value: "120", suffix: "+", label: "Projects Delivered" },
+  { value: "50", suffix: "+", label: "Happy Clients" },
 ];
 
 export const techStack = [
@@ -181,7 +181,7 @@ export const ratingSummary = {
 };
 
 export const aboutStats = [
-  { value: "50", suffix: "+", label: "Projects shipped" },
+  { value: "120", suffix: "+", label: "Projects shipped" },
   { value: "6", suffix: "+", label: "Long-term client relationships" },
   { value: "25", suffix: "", label: "Average conversion lift delivered" },
   { value: "12", suffix: "h", label: "Average client rating" },
@@ -340,7 +340,7 @@ export const featuredProject = {
 };
 
 export const workStats = [
-  { value: "50", suffix: "+", label: "Projects shipped across 6 industries" },
+  { value: "120", suffix: "+", label: "Projects shipped across 6 industries" },
   { value: "25", suffix: "", label: "Long-term client relationships" },
   { value: "42", suffix: "%", label: "Average conversion lift delivered" },
   { value: "5", suffix: "★", label: "Average client rating" },

@@ -220,7 +220,7 @@ export default function AboutPage() {
             </p>
             <p>
               I studied Computer Science, but most of what I know came from building things — real projects, real
-              clients, real deadlines. I&apos;ve shipped 50+ websites and apps across SaaS, e-commerce, fintech, and
+              clients, real deadlines. I&apos;ve shipped 120+ websites and apps across SaaS, e-commerce, fintech, and
               healthcare verticals.
             </p>
           </div>

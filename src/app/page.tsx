@@ -68,7 +68,7 @@ export default function HomePage() {
             <div className="bio-card__text">
               <div className="bio-card__copy">
                 <p>
-                  I&apos;m Bariq Bilal, a full-stack web developer and UI/UX designer with 6+ years of experience
+                  I&apos;m Bariq Bilal, a full-stack web developer and UI/UX designer with 8+ years of experience
                   transforming ideas into polished digital products. I work across the entire stack — from Figma
                   wireframes to production deployments.
                 </p>

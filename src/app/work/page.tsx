@@ -58,7 +58,7 @@ export default function WorkPage() {
           Projects that define <span className="text-gradient">the craft</span>
         </h1>
         <p className="hero__lead">
-          A curated selection of 50+ projects spanning SaaS platforms, e-commerce stores, mobile apps, and marketing
+          A curated selection of 120+ projects spanning SaaS platforms, e-commerce stores, mobile apps, and marketing
           websites — each built with the full design-to-development process.
         </p>
       </section>

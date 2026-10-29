@@ -4,7 +4,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react
 import type { Review } from "@/data/content";
 import { Stars } from "./ui";
 
-const AUTOPLAY_MS = 6000;
+const AUTOPLAY_MS = 4500;
 
 function initials(name: string) {
   const parts = name.replace(/[_\d]+/g, " ").trim().split(/[\s.]+/).filter(Boolean);
