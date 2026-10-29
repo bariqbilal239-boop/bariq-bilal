@@ -174,9 +174,9 @@ export const reviews: Review[] = [
   },
 ];
 
-export const upworkProfile = {
-  url: "https://www.upwork.com/freelancers/~01fd3f660d8fc51703",
+export const ratingSummary = {
   rating: "5.0",
+  reviewSummary: "90+ five-star reviews across different platforms",
   highlights: ["Identity verified on Upwork", "Certified: Full Stack Web Development", "Certified: MERN Stack Developer"],
 };
 

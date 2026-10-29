@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { processSteps, reviews, upworkProfile, type Project } from "@/data/content";
+import { processSteps, reviews, ratingSummary, type Project } from "@/data/content";
 import ReviewSlider from "./ReviewSlider";
 import { ArrowButton, Chips, SectionHeader, Stars } from "./ui";
 
@@ -64,23 +64,19 @@ export function TestimonialsSection() {
       <div className="card rating-bar">
         <div className="rating-bar__score">
           <span className="rating-bar__number">
-            {upworkProfile.rating}
+            {ratingSummary.rating}
             <span className="accent-2">★</span>
           </span>
           <span>
             <Stars rating={5} />
-            <span className="rating-bar__label">Average from {reviews.length} client reviews</span>
+            <span className="rating-bar__label">{ratingSummary.reviewSummary}</span>
           </span>
         </div>
         <ul className="rating-bar__list list-reset">
-          {upworkProfile.highlights.map((item) => (
+          {ratingSummary.highlights.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
-        <a href={upworkProfile.url} target="_blank" rel="noopener noreferrer" className="btn btn--secondary">
-          View my Upwork profile
-          <img src="/icons/arrow-right-small.svg" alt="" className="btn__icon btn__icon--sm" />
-        </a>
       </div>
       <ReviewSlider reviews={reviews} />
     </section>
